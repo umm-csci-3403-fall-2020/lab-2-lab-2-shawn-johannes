@@ -20,10 +20,13 @@ int main(int argc, char *argv[]) {
     // Without it, nothing will ever be a palindrome, unless it happens
     // to somehow start with a '\n'.
     line[strcspn(line, "\n")] = '\0';
-    char *answer = palindrome(line);
-    printf("Is the string <%s> a palindrome? %s\n", line, answer);
-    free(answer);
+
+    char *palindromeResult; // Used to refer to the result of calling the  palindrome function
+    palindromeResult = palindrome(line);
+    printf("Is the string <%s> a palindrome? %s\n", line, palindromeResult);
+    free(palindromeResult); // Free the char array allocated in the heap by palindrome
   }
 
   free(line);
+  
 }
