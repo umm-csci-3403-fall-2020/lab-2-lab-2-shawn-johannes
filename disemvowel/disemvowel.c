@@ -21,8 +21,12 @@ int detect_vowel(char currentCharacter) {
   }
 }
 
-          
-  
-
-    
-			
+int find_array_size(char *toClean) {
+  int counter = 1; // Leave an extra space for the null terminator
+  for (int i = 0; toClean[i] != '\0'; i++) {
+    if (detect_vowel(toClean[i]) == 0) {
+      counter++;
+    }
+  }
+  return counter;
+}
